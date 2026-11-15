@@ -1,0 +1,1056 @@
+
+/* =========================================
+   HOTEL AURELIA
+   Fiktives Hotel – Portfolio-Projekt
+========================================= */
+
+
+/* =========================================
+   1. GRUNDEINSTELLUNGEN
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #F8F5F0;
+    color: #40352D;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/* =========================================
+   2. NAVIGATION
+========================================= */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 22px 6%;
+    background-color: #40352D;
+    color: white;
+}
+
+.logo {
+    color: white;
+    font-size: 26px;
+    font-weight: bold;
+    letter-spacing: 5px;
+}
+
+nav {
+    display: flex;
+    gap: 30px;
+}
+
+nav a {
+    color: white;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #D6BE98;
+}
+
+.nav-button {
+    display: inline-block;
+    background-color: #D6BE98;
+    color: #40352D;
+
+    padding: 12px 22px;
+    font-size: 12px;
+    letter-spacing: 1px;
+
+    transition: background-color 0.3s ease;
+}
+
+.nav-button:hover {
+    background-color: white;
+}
+
+
+/* =========================================
+   3. HERO / STARTSEITE
+========================================= */
+
+.hero {
+    width: 100%;
+    min-height: 85vh;
+
+    background-image:
+        linear-gradient(
+            rgba(0, 0, 0, 0.35),
+            rgba(0, 0, 0, 0.45)
+        ),
+        url("images/hotel-hero.jpg");
+
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+    color: white;
+
+    padding: 80px 20px;
+}
+
+.hero-content {
+    max-width: 850px;
+}
+
+.subtitle {
+    color: #D6BE98;
+    letter-spacing: 4px;
+    font-size: 13px;
+    margin-bottom: 25px;
+}
+
+.hero h1 {
+    font-family: Georgia, serif;
+    font-size: 64px;
+    font-weight: normal;
+    line-height: 1.2;
+    margin-bottom: 25px;
+}
+
+.hero-description {
+    font-size: 17px;
+    max-width: 550px;
+    margin: 0 auto 40px;
+}
+
+.hero-button {
+    display: inline-block;
+    background-color: #D6BE98;
+    color: #40352D;
+
+    padding: 16px 32px;
+
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+
+    transition: background-color 0.3s ease;
+}
+
+.hero-button:hover {
+    background-color: white;
+}
+
+
+/* =========================================
+   4. ALLGEMEINE INHALTSBEREICHE
+========================================= */
+
+.content-section {
+    padding: 110px 20px;
+    text-align: center;
+    scroll-margin-top: 20px;
+}
+
+.section-subtitle {
+    color: #A88A61;
+    letter-spacing: 3px;
+    font-size: 12px;
+    margin-bottom: 15px;
+}
+
+.content-section h2 {
+    font-family: Georgia, serif;
+    font-size: 42px;
+    font-weight: normal;
+    margin-bottom: 25px;
+}
+
+.content-section > p:not(.section-subtitle) {
+    max-width: 600px;
+    margin: 0 auto;
+    font-size: 16px;
+}
+
+.content-section.light {
+    background-color: white;
+}
+
+.demo-notice {
+    margin-top: 25px !important;
+    font-size: 13px !important;
+    color: #87735D;
+}
+
+
+/* =========================================
+   5. ZIMMERKARTEN
+========================================= */
+
+.zimmer-container {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 30px;
+
+    width: 100%;
+    max-width: 1200px;
+    margin: 60px auto 0;
+    text-align: left;
+}
+
+/* Einzelne Zimmerkarte */
+
+.zimmer-karte {
+    background-color: white;
+    overflow: hidden;
+    min-width: 0;
+
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.zimmer-karte:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+}
+
+/* Zimmerbilder */
+
+.zimmer-karte img {
+    display: block;
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+}
+
+/* Text innerhalb der Karten */
+
+.zimmer-info {
+    padding: 30px;
+}
+
+.zimmer-info h3 {
+    font-family: Georgia, serif;
+    font-size: 25px;
+    font-weight: normal;
+    margin-bottom: 12px;
+}
+
+.zimmer-info .zimmer-details {
+    font-size: 12px;
+    color: #A88A61;
+    margin-bottom: 18px;
+}
+
+.zimmer-info .zimmer-beschreibung {
+    font-size: 14px;
+    color: #6B625A;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+/* Preise */
+
+.zimmer-info .zimmer-preis {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+.zimmer-preis span {
+    font-size: 13px;
+    font-weight: normal;
+    color: #87735D;
+}
+
+/* Zimmerbutton */
+
+.zimmer-button {
+    display: inline-block;
+    background-color: #40352D;
+    color: white;
+
+    padding: 14px 25px;
+
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+
+    transition: background-color 0.3s ease;
+}
+
+.zimmer-button:hover {
+    background-color: #A88A61;
+}
+
+
+/* =========================================
+   6. WELLNESS & SPA
+========================================= */
+
+.wellness-section {
+    background-color: #F0EBE4;
+    padding: 100px 6%;
+}
+
+/* Zwei Spalten: Bild und Text */
+
+.wellness-container {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+
+    max-width: 1300px;
+    margin: 0 auto;
+
+    align-items: center;
+    gap: 70px;
+}
+
+/* Wellnessbild */
+
+.wellness-image {
+    width: 100%;
+    overflow: hidden;
+}
+
+.wellness-image img {
+    display: block;
+    width: 100%;
+    height: 550px;
+
+    object-fit: cover;
+
+    transition: transform 0.5s ease;
+}
+
+/* Bildanimation */
+
+.wellness-image:hover img {
+    transform: scale(1.05);
+}
+
+/* Textbereich */
+
+.wellness-content {
+    padding: 20px 0;
+}
+
+.wellness-subtitle {
+    color: #A88A61;
+    font-size: 12px;
+    letter-spacing: 4px;
+    margin-bottom: 20px;
+}
+
+.wellness-content h2 {
+    font-family: Georgia, serif;
+    font-size: 48px;
+    font-weight: normal;
+    line-height: 1.2;
+
+    color: #40352D;
+    margin-bottom: 30px;
+}
+
+.wellness-description {
+    font-size: 16px;
+    line-height: 1.9;
+    color: #6B625A;
+    margin-bottom: 20px;
+}
+
+/* Wellnessbutton */
+
+.wellness-button {
+    display: inline-block;
+
+    background-color: #40352D;
+    color: white;
+
+    padding: 16px 32px;
+    margin-top: 20px;
+
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 12px;
+
+    transition: background-color 0.3s ease;
+}
+
+.wellness-button:hover {
+    background-color: #A88A61;
+}
+
+
+/* =========================================
+   7. KONTAKT
+========================================= */
+
+#kontakt {
+    background-color: #F8F5F0;
+    text-align: center;
+}
+
+
+/* =========================================
+   8. FOOTER
+========================================= */
+
+footer {
+    background-color: #40352D;
+    color: white;
+
+    text-align: center;
+    padding: 30px 20px;
+
+    font-size: 13px;
+}
+
+
+/* =========================================
+   9. RESPONSIVES DESIGN – TABLET
+========================================= */
+
+@media (max-width: 1000px) {
+
+    /* Zimmer: Zwei Spalten */
+
+    .zimmer-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    /* Navigation */
+
+    .navbar {
+        flex-direction: column;
+        gap: 22px;
+        padding: 25px 15px;
+    }
+
+    nav {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 18px;
+    }
+
+    /* Startseite */
+
+    .hero h1 {
+        font-size: 48px;
+    }
+
+    /* Wellness: Eine Spalte */
+
+    .wellness-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .wellness-image img {
+        height: 400px;
+    }
+
+    .wellness-content h2 {
+        font-size: 38px;
+    }
+
+}
+
+
+/* =========================================
+   10. RESPONSIVES DESIGN – SMARTPHONE
+========================================= */
+
+@media (max-width: 650px) {
+
+    /* Navigation */
+
+    .logo {
+        font-size: 23px;
+    }
+
+    nav {
+        gap: 15px;
+    }
+
+    nav a {
+        font-size: 12px;
+    }
+
+    /* Startseite */
+
+    .hero {
+        min-height: 75vh;
+        padding: 60px 20px;
+    }
+
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    .hero-description {
+        font-size: 15px;
+    }
+
+    .subtitle {
+        font-size: 11px;
+        letter-spacing: 2px;
+    }
+
+    /* Allgemeine Abschnitte */
+
+    .content-section {
+        padding: 75px 20px;
+    }
+
+    .content-section h2 {
+        font-size: 30px;
+    }
+
+    /* Zimmer: Eine Spalte */
+
+    .zimmer-container {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .zimmer-karte img {
+        height: 240px;
+    }
+
+    .zimmer-info {
+        padding: 25px;
+    }
+
+    /* Wellness */
+
+    .wellness-section {
+        padding: 65px 20px;
+    }
+
+    .wellness-image img {
+        height: 300px;
+    }
+
+    .wellness-content h2 {
+        font-size: 32px;
+    }
+
+    .wellness-description {
+        font-size: 15px;
+    }
+
+}
+
+/* =========================
+   GALERIE DESIGN
+========================= */
+
+.galerie-section {
+    padding: 100px 6%;
+    background-color: #F8F5F0;
+}
+
+.galerie-heading {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.galerie-heading h2 {
+    font-family: Georgia, serif;
+    font-size: 44px;
+    font-weight: normal;
+    margin-bottom: 20px;
+}
+
+/* Drei Bilder nebeneinander */
+
+.galerie-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Größe der Bilder */
+
+.galerie-bild {
+    display: block;
+    width: 100%;
+    padding: 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.galerie-bild img {
+    display: block;
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+/* Animation */
+
+.galerie-bild:hover img {
+    transform: scale(1.05);
+}
+
+/* Tablet */
+
+@media (max-width: 900px) {
+    .galerie-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* Smartphone */
+
+@media (max-width: 600px) {
+    .galerie-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .galerie-bild img {
+        height: 220px;
+    }
+}
+
+/* =========================================
+   14. KONTAKTFORMULAR
+========================================= */
+
+.kontakt-section {
+    background-color: #F8F5F0;
+    padding: 100px 20px;
+}
+
+/* Gesamter Kontaktbereich */
+
+.kontakt-container {
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+/* Überschrift */
+
+.kontakt-heading {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.kontakt-heading h2 {
+    font-family: Georgia, serif;
+    font-size: 44px;
+    font-weight: normal;
+    color: #40352D;
+    margin-bottom: 20px;
+}
+
+.kontakt-heading > p:last-child {
+    font-size: 16px;
+    color: #6B625A;
+    line-height: 1.8;
+}
+
+/* Formular */
+
+#kontakt-formular {
+    background-color: white;
+    padding: 45px;
+
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+}
+
+/* Abstände der Eingabefelder */
+
+.formular-gruppe {
+    margin-bottom: 25px;
+}
+
+/* Beschriftungen */
+
+.formular-gruppe label {
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    color: #40352D;
+    margin-bottom: 10px;
+}
+
+/* Eingabefelder */
+
+.formular-gruppe input,
+.formular-gruppe textarea {
+    display: block;
+    width: 100%;
+    padding: 15px;
+
+    border: 1px solid #DDD5CB;
+    border-radius: 0;
+
+    background-color: #FFFFFF;
+    color: #40352D;
+
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+
+    transition: border-color 0.3s ease;
+}
+
+/* Feld beim Anklicken */
+
+.formular-gruppe input:focus,
+.formular-gruppe textarea:focus {
+    outline: 2px solid #A88A61;
+    outline-offset: 2px;
+    border-color: #A88A61;
+}
+
+/* Textfeld */
+
+.formular-gruppe textarea {
+    resize: vertical;
+    min-height: 140px;
+}
+
+/* Absenden-Button */
+
+.kontakt-button {
+    width: 100%;
+    background-color: #40352D;
+    color: white;
+
+    padding: 18px 25px;
+
+    border: none;
+    cursor: pointer;
+
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+
+    transition: background-color 0.3s ease;
+}
+
+.kontakt-button:hover {
+    background-color: #A88A61;
+}
+
+.kontakt-button:focus-visible {
+    outline: 3px solid #A88A61;
+    outline-offset: 3px;
+}
+
+/* Erfolgsmeldung */
+
+.formular-erfolg {
+    background-color: #E8F2E8;
+    color: #285C39;
+
+    padding: 18px;
+    margin-top: 20px;
+
+    text-align: center;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+/* Versteckte Meldung auch wirklich ausblenden */
+
+.formular-erfolg[hidden] {
+    display: none;
+}
+
+/* Demo-Hinweis */
+
+.formular-hinweis {
+    text-align: center;
+    color: #87735D;
+    font-size: 12px;
+
+    margin-top: 25px;
+    line-height: 1.7;
+}
+
+/* =========================================
+   15. KONTAKT AUF SMARTPHONES
+========================================= */
+
+@media (max-width: 650px) {
+
+    .kontakt-section {
+        padding: 70px 20px;
+    }
+
+    .kontakt-heading h2 {
+        font-size: 32px;
+    }
+
+    #kontakt-formular {
+        padding: 25px;
+    }
+
+}
+
+/* =========================
+   LIGHTBOX KORREKTUR
+========================= */
+
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+
+    background-color: rgba(0, 0, 0, 0.92);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 9999;
+
+    /* Standardmäßig unsichtbar */
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+/* Beim Anklicken sichtbar */
+
+.lightbox.aktiv {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+/* Vergrößertes Bild */
+
+.lightbox-image {
+    display: block;
+    max-width: 90%;
+    max-height: 85vh;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+}
+
+/* Schließen-Button */
+
+.lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+
+    background: none;
+    border: none;
+
+    color: white;
+    font-size: 45px;
+
+    cursor: pointer;
+    z-index: 10000;
+}
+
+/* =========================================
+   16. MODERNE MOBILE NAVIGATION
+========================================= */
+
+/* Der Menübutton ist am Desktop unsichtbar */
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+}
+
+/* Drei Striche des Menübuttons */
+
+.menu-toggle span {
+    display: block;
+    width: 27px;
+    height: 2px;
+    background-color: white;
+    margin: 6px 0;
+    transition: 0.3s;
+}
+
+/* Navigation am Desktop */
+
+.navbar {
+    position: relative;
+    z-index: 100;
+}
+
+/* =========================
+   TABLET & SMARTPHONE
+========================= */
+
+@media (max-width: 1000px) {
+
+    .navbar {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 0;
+        padding: 20px 6%;
+    }
+
+    /* Menübutton einblenden */
+
+    .menu-toggle {
+        display: block;
+        order: 2;
+    }
+
+    /* Navigation standardmäßig verstecken */
+
+    .navbar nav {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        gap: 22px;
+
+        width: 100%;
+        padding: 30px 0;
+
+        background-color: #40352D;
+        order: 3;
+    }
+
+    /* Geöffnetes Menü */
+
+    .navbar nav.aktiv {
+        display: flex;
+    }
+
+    .navbar nav a {
+        color: white;
+        font-size: 16px;
+    }
+
+    .navbar nav a:hover {
+        color: #D6BE98;
+    }
+
+    /* Buchungsbutton mobil verstecken */
+
+    .navbar .nav-button {
+        display: none;
+    }
+
+    /* Animation zum X */
+
+    .menu-toggle.aktiv span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .menu-toggle.aktiv span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle.aktiv span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+}
+
+.menu-toggle:focus-visible {
+    outline: 2px solid #D6BE98;
+    outline-offset: 4px;
+}
+
+/* =========================================
+   17. NEUE SCHRIFTARTEN
+========================================= */
+
+/* Normale Texte */
+
+body {
+    font-family: "Inter", Arial, sans-serif;
+}
+
+/* Überschriften */
+
+.hero h1,
+.content-section h2,
+.zimmer-info h3,
+.wellness-content h2,
+.galerie-heading h2,
+.kontakt-heading h2 {
+    font-family: "Playfair Display", Georgia, serif;
+}
+
+/* Logo */
+
+.logo {
+    font-family: "Inter", Arial, sans-serif;
+    font-weight: 500;
+}
+
+/* =========================================
+   18. FEINSCHLIFF & ANIMATIONEN
+========================================= */
+
+.hero-button,
+.nav-button,
+.zimmer-button,
+.wellness-button,
+.kontakt-button {
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.hero-button:hover,
+.nav-button:hover,
+.zimmer-button:hover,
+.wellness-button:hover,
+.kontakt-button:hover {
+    transform: translateY(-3px);
+}
+
+/* Weniger Animation bei entsprechender Einstellung */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+    }
+
+}
