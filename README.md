@@ -2,7 +2,7 @@
 
 Eine moderne, responsive Hotel-Webseite als fiktives Portfolio-Projekt, entwickelt mit HTML, CSS und JavaScript.
 
-🌐 **[Live-Demo ansehen](https://fasi2706.github.io/hotel-aurelia/)**
+🌐 **[Live-Demo ansehen](https://mavesso.github.io/hotel-aurelia/)**
 
 ## Über das Projekt
 
